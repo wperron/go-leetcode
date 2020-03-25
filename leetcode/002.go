@@ -5,7 +5,7 @@ import (
 )
 
 func AddTwoNumbers(l1 *linkedlist.Node, l2 *linkedlist.Node) *linkedlist.Node {
-	res := linkedlist.Node{0, nil}
+	res := linkedlist.Node{Val: 0, Next: nil}
 	lastres := &res
 	lastl1 := l1
 	lastl2 := l2
@@ -14,7 +14,7 @@ func AddTwoNumbers(l1 *linkedlist.Node, l2 *linkedlist.Node) *linkedlist.Node {
 	// Add numbers of each list with the other at the same position
 	for lastl1 != nil && lastl2 != nil {
 		this, carry = add(lastl1.Val, lastl2.Val+carry)
-		newres := linkedlist.Node{this, nil}
+		newres := linkedlist.Node{Val: this, Next: nil}
 		lastres.Next = &newres
 		lastres = &newres
 
@@ -27,7 +27,7 @@ func AddTwoNumbers(l1 *linkedlist.Node, l2 *linkedlist.Node) *linkedlist.Node {
 	if lastl1 != nil {
 		for lastl1 != nil {
 			this, carry = add(lastl1.Val, carry)
-			newres := linkedlist.Node{this, nil}
+			newres := linkedlist.Node{Val: this, Next: nil}
 			lastres.Next = &newres
 			lastres = &newres
 			lastl1 = lastl1.Next
@@ -35,7 +35,7 @@ func AddTwoNumbers(l1 *linkedlist.Node, l2 *linkedlist.Node) *linkedlist.Node {
 	} else if lastl2 != nil {
 		for lastl2 != nil {
 			this, carry = add(lastl2.Val, carry)
-			newres := linkedlist.Node{this, nil}
+			newres := linkedlist.Node{Val: this, Next: nil}
 			lastres.Next = &newres
 			lastres = &newres
 			lastl2 = lastl2.Next
@@ -44,7 +44,7 @@ func AddTwoNumbers(l1 *linkedlist.Node, l2 *linkedlist.Node) *linkedlist.Node {
 
 	// append any remaining carry to the list
 	if carry != 0 {
-		last := linkedlist.Node{carry, nil}
+		last := linkedlist.Node{Val: carry, Next: nil}
 		lastres.Next = &last
 	}
 

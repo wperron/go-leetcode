@@ -7,15 +7,15 @@ import (
 )
 
 func TestAddTwoNumbers(t *testing.T) {
-	n1 := linkedlist.Node{2, nil}
-	n2 := linkedlist.Node{4, nil}
-	n3 := linkedlist.Node{3, nil}
+	n1 := linkedlist.Node{Val: 2, Next: nil}
+	n2 := linkedlist.Node{Val: 4, Next: nil}
+	n3 := linkedlist.Node{Val: 3, Next: nil}
 	n1.Next = &n2
 	n2.Next = &n3
 
-	n4 := linkedlist.Node{5, nil}
-	n5 := linkedlist.Node{6, nil}
-	n6 := linkedlist.Node{4, nil}
+	n4 := linkedlist.Node{Val: 5, Next: nil}
+	n5 := linkedlist.Node{Val: 6, Next: nil}
+	n6 := linkedlist.Node{Val: 4, Next: nil}
 	n4.Next = &n5
 	n5.Next = &n6
 
@@ -30,11 +30,11 @@ func TestAddTwoNumbers(t *testing.T) {
 }
 
 func TestAddTwoNumbersWithZero(t *testing.T) {
-	n1 := linkedlist.Node{1, nil}
-	n2 := linkedlist.Node{8, nil}
+	n1 := linkedlist.Node{Val: 1, Next: nil}
+	n2 := linkedlist.Node{Val: 8, Next: nil}
 	n1.Next = &n2
 
-	n3 := linkedlist.Node{0, nil}
+	n3 := linkedlist.Node{Val: 0, Next: nil}
 
 	newhead := AddTwoNumbers(&n1, &n3)
 	last := newhead
