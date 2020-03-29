@@ -24,8 +24,8 @@ func TestLinkedList(t *testing.T) {
 	for last.Next != nil {
 		last = last.Next
 	}
-	if last.val != 100 {
-		t.Errorf("Expected 'next' to be the last item, got %d", last.val)
+	if last.Val != 100 {
+		t.Errorf("Expected 'next' to be the last item, got %d", last.Val)
 	}
 
 	popped := linked.Pop()
@@ -33,16 +33,16 @@ func TestLinkedList(t *testing.T) {
 	for last.Next != nil {
 		last = last.Next
 	}
-	if popped.val != 100 {
-		t.Errorf("Expected 'next' to be popped, got %d", popped.val)
+	if popped.Val != 100 {
+		t.Errorf("Expected 'next' to be popped, got %d", popped.Val)
 	}
-	if last.val != 4 {
-		t.Errorf("Expected 'd' to be the new last item, got %d", last.val)
+	if last.Val != 4 {
+		t.Errorf("Expected 'd' to be the new last item, got %d", last.Val)
 	}
 
 	linked.Unshift(&popped)
-	if linked.Head.val != 100 {
-		t.Errorf("Expected 'next' to be the new head item, got %d", linked.Head.val)
+	if linked.Head.Val != 100 {
+		t.Errorf("Expected 'next' to be the new head item, got %d", linked.Head.Val)
 	}
 }
 
@@ -62,8 +62,8 @@ func TestInsertAfter(t *testing.T) {
 
 	last := &linked.Head
 	for last != nil {
-		if last.val == 2 && last.Next.val != 100 {
-			t.Errorf("Expected 100 to come after 2, got %d\n", last.Next.val)
+		if last.Val == 2 && last.Next.Val != 100 {
+			t.Errorf("Expected 100 to come after 2, got %d\n", last.Next.Val)
 		}
 		last = last.Next
 	}
@@ -87,7 +87,7 @@ func TestMerge(t *testing.T) {
 	merged := make([]int, 8)
 	i := 0
 	for last != nil {
-		merged[i] = last.val
+		merged[i] = last.Val
 		last = last.Next
 		i++
 	}
