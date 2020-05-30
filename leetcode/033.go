@@ -5,7 +5,7 @@ func search(nums []int, target int) int {
 	high := len(nums) - 1
 	mid := len(nums) / 2
 	result := -1
-	for low < high {
+	for low < mid {
 		if target == nums[mid] {
 			result = mid
 			low, high = high, low
